@@ -6,12 +6,10 @@
 */
 module.exports = {
   *beforeSendRequest(requestDetail) {
-    if (requestDetail.url.indexOf('http://httpbin.org') === 0) {
-      const newRequestOptions = requestDetail.requestOptions;
-      newRequestOptions.headers['User-Agent'] = 'AnyProxy/0.0.0';
-      return {
-        requestOptions: newRequestOptions
-      };
-    }
+     const newRequestOptions = requestDetail.requestOptions;
+     newRequestOptions.headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36';
+     return {
+       requestOptions: newRequestOptions
+     };
   },
 };
